@@ -2,10 +2,27 @@
 <html lang="en">
 <head>
 
-  <link href="//fonts.googleapis.com/css?family=Roboto:400,300,600" rel="stylesheet" type="text/css">
+  <meta charset="utf-8">
+  <title>Bubbles</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74339615-3"></script>
+      <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-74339615-3');
+    </script>
 
 </head>
 
@@ -13,30 +30,31 @@
 
   <div class="container">
     <div class="row">
-      <div class="twelve column" style="margin-top: 15%">
-        <h1>the whole world is bubbles</h1>
-        <h5>bubble.io is a global network of IoT bubblemakers. bubble.io is a totally open source projcet, and anyone can build their own bubble node and join the global network of IoT bubble makers. Current bubble makers are located in: Pittsburgh, Los Angeles, Paris, Chicago, Cusco, and Manitoba. <br> <br>
+     <div class="one-full column" style="margin-top: 5%">
 
-        bubble.io is built on trust. You'll may never be able to see the bubbles, but rest assured with each tap, hundreds of bubbles are being released a your selected locale.
+   <form id="myForm" action="http://bubblemachine1.ddns.net:8080" method="POST" target="hidden-form">
 
-        </h5>
-        <a class="container button button-primary" href="#">Press For Bubbles In Pittsburgh</a>
+  <input type="hidden" name="duration" value="5">
 
-        </h5>
-        <a class="container button button-primary" href="#">Press For Bubbles In Paris</a>
+   <button type="submit" class="container button button-primary" id="mySubmit" onclick="submit_form();">Blow some bubbles</button>
 
-        </h5>
-        <a class="container button button-primary" href="#">Press For Bubbles In Chicago</a>
+ </form>
+ <IFRAME style="display:none" name="hidden-form"></IFRAME>  
 
-        </h5>
-        <a class="container button button-primary" href="#">Press For Bubbles In Cusco</a>
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-        </h5>
-        <a class="container button button-primary" href="#">Press For Bubbles In Manitoba</a>
+ <script src="clock.js"></script>
 
 
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
+
 </body>
 </html>
+<script type="text/javascript">
+  function submit_form() {
+    document.getElementById('myForm').submit();
+  }
+</script>
+
