@@ -22,6 +22,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
   <title>Bubbles</title>
 
   <!-- Add to homescreen for Chrome on Android -->
@@ -65,7 +66,7 @@
   <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">Bubbleboi</span>
+        <span class="mdl-layout-title">Pittsbubble</span>
         <div class="mdl-layout-spacer"></div>
       </div>
     </header>
@@ -107,28 +108,28 @@
           The bubble maker at 173C is a free public art installation. Tap the button below for 15 seconds of lovely bubble bliss!
         </div>
         <div class="mdl-card__actions mdl-card--border">
-             
-             <form id="myForm">
+         
+         <form id="myForm">
 
-               <input type="hidden" name="duration" value="15">
+           <input type="hidden" name="duration" value="15">
 
-          <input type="submit" value="LET'S MAKE SOME BUBBLES! " class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"> 
+           <input type="submit" value="LET'S MAKE SOME BUBBLES! " class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"> 
 
-           </form>
-        </div>
-        <div class="mdl-card__menu">
-          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-            <i class="material-icons">share</i>
-          </button>
-        </div>
-
-
-
+         </form>
+       </div>
+       <div class="mdl-card__menu">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+          <i class="material-icons">share</i>
+        </button>
       </div>
 
+
+
     </div>
-  </main>
-  <footer class="mdl-mini-footer mdl-color--grey-100">
+
+  </div>
+</main>
+<footer class="mdl-mini-footer mdl-color--grey-100">
   <div class="mdl-mini-footer__left-section ">
     <ul class="mdl-mini-footer__link-list">
       Built by&nbsp<a class="mdl-navigation__link" href="https://www.tabb.me/"><u>Taylor Tabb</u></a>
@@ -199,7 +200,7 @@ $("#myForm").submit(function(event){
 
     // Abort any pending request
     if (request) {
-        request.abort();
+      request.abort();
     }
     // setup some local variables
     var $form = $(this);
@@ -217,34 +218,41 @@ $("#myForm").submit(function(event){
 
     // Fire off the request to /form.php
     request = $.ajax({
-        url: "http://bubblemachine1.ddns.net:8080",
-        type: "post",
-        data: serializedData
+      url: "http://bubblemachine1.ddns.net:8080",
+      type: "post",
+      data: serializedData
     });
 
     // Callback handler that will be called on success
     request.done(function (response, textStatus, jqXHR){
         // Log a message to the console
         console.log("Hooray, it worked!");
-    });
+      });
 
     // Callback handler that will be called on failure
     request.fail(function (jqXHR, textStatus, errorThrown){
         // Log the error to the console
         console.error(
-            "The following error occurred: "+
-            textStatus, errorThrown
-        );
-    });
+          "The following error occurred: "+
+          textStatus, errorThrown
+          );
+      });
 
     // Callback handler that will be called regardless
     // if the request failed or succeeded
     request.always(function () {
         // Reenable the inputs
         $inputs.prop("disabled", false);
-    });
+      });
 
-});
+  });
+</script>
+
+<script type="text/javascript">
+  
+  /mobile/i.test(navigator.userAgent) && !location.hash &&
+  setTimeout(function () {   window.scrollTo(0, 1); }, 1000);​
+
 </script>
 
 </body>
