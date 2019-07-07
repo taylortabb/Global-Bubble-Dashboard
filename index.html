@@ -129,15 +129,15 @@
          </form>
        </div>
        <div class="mdl-card__menu">
-       </div>
+      </div>
 
 
 
-     </div>
+    </div>
 
-   </div>
- </main>
- <footer class="mdl-mini-footer mdl-color--grey-100">
+  </div>
+</main>
+<footer class="mdl-mini-footer mdl-color--grey-100">
   <div class="mdl-mini-footer__left-section ">
     <ul class="mdl-mini-footer__link-list">
       Built by&nbsp<a class="mdl-navigation__link" href="https://www.tabb.me/"><u>Taylor Tabb</u></a>
@@ -227,12 +227,6 @@ $("#myForm").submit(function(event){
     // Fire off the request to /form.php
     request = $.ajax({
       url: "http://bubblemachine1.ddns.net:8080",
-      type: "post",
-      data: serializedData
-    });
-
-    request = $.ajax({
-      url: "https://script.google.com/macros/s/AKfycbzANUn9p1-takFtazqaqorEhhnixmfF0je0k-iOVWDjgPbE83k/exec",
       type: "post",
       data: serializedData
     });
