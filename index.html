@@ -123,6 +123,7 @@
          <form id="myForm">
 
            <input type="hidden" name="duration" value="5">
+           <input type='hidden' value='<?php echo $_SERVER["REMOTE_ADDRESS"]; ?>' name='IP'>
 
            <input type="submit" value="LET'S MAKE SOME BUBBLES! " class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"> 
 
@@ -227,6 +228,12 @@ $("#myForm").submit(function(event){
     // Fire off the request to /form.php
     request = $.ajax({
       url: "http://bubblemachine1.ddns.net:8080",
+      type: "post",
+      data: serializedData
+    });
+
+    request = $.ajax({
+      url: "https://script.google.com/macros/s/AKfycbzANUn9p1-takFtazqaqorEhhnixmfF0je0k-iOVWDjgPbE83k/exec",
       type: "post",
       data: serializedData
     });
